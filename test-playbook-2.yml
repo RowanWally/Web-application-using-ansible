@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Add users
+    user:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - sameh
+      - rowan
